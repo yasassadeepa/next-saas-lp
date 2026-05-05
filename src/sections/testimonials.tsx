@@ -3,58 +3,65 @@
 import Badge from "@/components/badge"
 import SlideEffect from "@/components/slide-effect"
 import TextRevealEffect from "@/components/text-reveal-effect"
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
+import { Quote } from "lucide-react"
 
 const settings = {
   badge: {
-    number: 5,
-    text: 'SOCIAL PROOF',
+    number: 8,
+    text: 'OUR LEADERSHIP',
   },
-  title: 'Trusted by Top Closers',
-  description: 'Join the hundreds of sales teams who have transformed their outreach and conversion rates with Closer Intellect AI.',
-  testimonials: [
+  title: 'Vision for the Future',
+  description: 'Closer Intellect AI was built by closers, for closers. Hear from our leadership about the mission to revolutionize sales.',
+  quotes: [
     {
-      quote:
-        "The AI Second Brain is a game-changer. I never go into a call without my battle plan ready. Our conversion rates have spiked by 40% since we started.",
-      name: "Marcus Aurelius",
-      designation: "SDR at GrowthSync",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop",
+      quote: "Our mission is to eliminate the friction in high-stakes sales. We don't just provide tools; we provide the strategic edge that turns every rep into a top performer through intelligence and automation.",
+      name: "Anthony Henderson",
+      role: "CEO",
     },
     {
-      quote:
-        "Finally, a sales tool that actually helps you close instead of just adding more admin work. The live coaching feedback is like having a pro mentor in your ear.",
-      name: "Sophia Loren",
-      designation: "Agency Owner at ScaleUp",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop",
-    },
-    {
-      quote:
-        "The lead marketplace and automated contracts have saved us hours of back-and-forth. We can now close a deal in minutes, not days.",
-      name: "David Goggins",
-      designation: "Sales Director at PeakPerformance",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop",
+      quote: "Efficiency is the backbone of agency growth. By automating the administrative burden, we allow teams to focus on what truly matters—building authentic relationships and closing more deals.",
+      name: "Teneya Saens",
+      role: "CFO",
     },
   ]
 }
 
 export default function Testimonials() {
   return (
-    <div id='testimonials' className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center">
-      {/* Badge */}
-      <SlideEffect>
-        <Badge number={settings.badge.number} text={settings.badge.text} />
-      </SlideEffect>
+    <div id='testimonials' className="space-y-12 md:space-y-20 mx-auto text-center">
+      <div className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10">
+        {/* Badge */}
+        <SlideEffect>
+          <Badge number={settings.badge.number} text={settings.badge.text} />
+        </SlideEffect>
 
-      {/* Title */}
-      <TextRevealEffect className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</TextRevealEffect>
+        {/* Title */}
+        <TextRevealEffect className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</TextRevealEffect>
 
-      {/* Description */}
-      <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
+        {/* Description */}
+        <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
+      </div>
 
-      {/* Testimonials */}
-      <SlideEffect>
-        <AnimatedTestimonials autoplay testimonials={settings.testimonials} />
-      </SlideEffect>
+      {/* Leadership Quotes */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto px-4">
+        {settings.quotes.map((item, index) => (
+          <SlideEffect key={index} direction={index === 0 ? 'right' : 'left'} delay={index * 0.2} className="relative group h-full">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-transparent rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+            <div className="relative h-full flex flex-col items-center justify-between p-8 md:p-12 rounded-3xl bg-secondary/40 border border-border/50 hover:border-primary/30 transition-all duration-300">
+              <Quote className="text-primary/40 mb-6" size={48} />
+              
+              <p className="text-lg md:text-xl text-white font-medium leading-relaxed italic mb-8">
+                "{item.quote}"
+              </p>
+              
+              <div className="space-y-1">
+                <h4 className="text-xl font-bold text-white tracking-wide">{item.name}</h4>
+                <p className="text-primary font-semibold uppercase tracking-widest text-xs">{item.role}</p>
+              </div>
+            </div>
+          </SlideEffect>
+        ))}
+      </div>
     </div>
   )
 }
