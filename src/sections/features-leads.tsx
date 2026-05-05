@@ -1,11 +1,9 @@
 'use client'
 
 import Badge from "@/components/badge"
-import Card from "@/components/card"
 import SlideEffect from "@/components/slide-effect"
-import Image from "next/image"
 import { Safari } from "@/components/ui/safari"
-import { Search, Database, Globe, UserPlus, Zap } from "lucide-react"
+import { Database, Globe, UserPlus } from "lucide-react"
 
 const settings = {
   badge: {

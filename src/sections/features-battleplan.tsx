@@ -2,9 +2,8 @@
 
 import Badge from "@/components/badge"
 import SlideEffect from "@/components/slide-effect"
-import Image from "next/image"
 import { Safari } from "@/components/ui/safari"
-import { Brain, Target, ShieldAlert, Sparkles } from "lucide-react"
+import { Brain, Target, ShieldAlert } from "lucide-react"
 
 const settings = {
   badge: {

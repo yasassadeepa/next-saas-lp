@@ -63,7 +63,7 @@ export function useElasticLineEvents(
         setIsGrabbed(false)
       }
     }
-  }, [mousePosition, isVertical, isGrabbed, grabThreshold, releaseThreshold])
+  }, [mousePosition, isVertical, isGrabbed, grabThreshold, releaseThreshold, containerRef, dimensions])
 
   return { isGrabbed, controlPoint }
 }

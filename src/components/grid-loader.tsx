@@ -57,7 +57,6 @@ export default function GridLoader({
   }
 
   const pixelSize = typeof size === 'number' ? size : sizeMap[size]
-  const cellSize = pixelSize / 3
   const gap = pixelSize * 0.1
 
   return (

@@ -60,7 +60,7 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
       tx4: Math.random() - 0.5,
       ty4: Math.random() - 0.5,
     }))
-  }, [colors, isClient, dimensions.width, dimensions.height])
+  }, [colors, isClient])
 
   if (!isClient) return <div className="absolute inset-0 bg-slate-900/50" />
 

@@ -70,14 +70,14 @@ const ElasticLine: React.FC<ElasticLineProps> = ({
     }
     x.set(dimensions.width / 2)
     y.set(dimensions.height / 2)
-  }, [dimensions, hasAnimatedIn])
+  }, [dimensions, hasAnimatedIn, animateInTransition, pathLength, x, y])
 
   useEffect(() => {
     if (!isGrabbed && hasAnimatedIn) {
       animate(x, dimensions.width / 2, transition)
       animate(y, dimensions.height / 2, transition)
     }
-  }, [isGrabbed])
+  }, [isGrabbed, hasAnimatedIn, dimensions.width, dimensions.height, transition, x, y])
 
   useAnimationFrame(() => {
     if (isGrabbed) {

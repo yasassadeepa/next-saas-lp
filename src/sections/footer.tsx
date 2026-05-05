@@ -9,7 +9,7 @@ const settings = {
     { title: 'Home', href: '/' },
     { title: 'Features', href: '#features' },
     { title: 'Pricing', href: '#pricing' },
-    { title: 'Testimonials', href: '#testimonials' },
+    { title: 'Leadership', href: '#leadership' },
     { title: 'FAQ', href: '#faq' },
   ],
   socialMedia: [

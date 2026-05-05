@@ -28,7 +28,7 @@ const settings = {
 
 export default function Testimonials() {
   return (
-    <div id='testimonials' className="space-y-12 md:space-y-20 mx-auto text-center">
+    <div id='leadership' className="space-y-12 md:space-y-20 mx-auto text-center">
       <div className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10">
         {/* Badge */}
         <SlideEffect>
@@ -51,7 +51,7 @@ export default function Testimonials() {
               <Quote className="text-primary/40 mb-6" size={48} />
               
               <p className="text-lg md:text-xl text-white font-medium leading-relaxed italic mb-8">
-                "{item.quote}"
+                &quot;{item.quote}&quot;
               </p>
               
               <div className="space-y-1">

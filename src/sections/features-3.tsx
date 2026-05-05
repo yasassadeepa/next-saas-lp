@@ -12,8 +12,7 @@ import {
   FileText, 
   Signature, 
   Phone, 
-  Database,
-  ArrowRight
+  Database
 } from "lucide-react"
 
 const settings = {
@@ -37,7 +36,7 @@ const settings = {
   },
 }
 
-const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { icon1: any, icon2: any, icon3: any }) => {
+const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { icon1: React.ElementType, icon2: React.ElementType, icon3: React.ElementType }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const fromRef = useRef<HTMLDivElement>(null);
   const midRef = useRef<HTMLDivElement>(null);

@@ -2,9 +2,8 @@
 
 import Badge from "@/components/badge"
 import SlideEffect from "@/components/slide-effect"
-import Image from "next/image"
 import { Safari } from "@/components/ui/safari"
-import { Send, PhoneCall, Clock, CheckCircle2 } from "lucide-react"
+import { Send, PhoneCall, Clock } from "lucide-react"
 
 const settings = {
   badge: {
