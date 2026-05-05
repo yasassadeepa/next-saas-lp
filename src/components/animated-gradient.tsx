@@ -31,7 +31,7 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
   }, [])
 
   const circleSize = useMemo(
-    () => Math.max(dimensions.width, dimensions.height),
+    () => Math.max(dimensions.width, dimensions.height) || 800,
     [dimensions.width, dimensions.height]
   )
 
@@ -46,9 +46,9 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
   const circleProps = useMemo(() => {
     if (!isClient) return []
     return colors.map(() => ({
-      top: `${Math.random() * 50}%`,
-      left: `${Math.random() * 50}%`,
-      sizeMultiplier: randomInt(0.5, 1.5),
+      top: `${Math.random() * 80 - 15}%`,
+      left: `${Math.random() * 80 - 15}%`,
+      sizeMultiplier: randomInt(0.8, 1.2),
       tx1: Math.random() - 0.5,
       ty1: Math.random() - 0.5,
       tx2: Math.random() - 0.5,
@@ -58,9 +58,10 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
       tx4: Math.random() - 0.5,
       ty4: Math.random() - 0.5,
     }))
-  }, [colors, isClient])
+  }, [colors, isClient, dimensions.width, dimensions.height])
 
-  if (!isClient) return <div className="absolute inset-0 bg-inherit" />
+  if (!isClient) return <div className="absolute inset-0 bg-slate-900/50" />
+
 
   return (
     <div ref={containerRef} className={cn("absolute inset-0 overflow-hidden", className)}>
