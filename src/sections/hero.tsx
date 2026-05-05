@@ -9,6 +9,7 @@ import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { Safari } from "@/components/ui/safari";
 import BreathingText from "@/components/fancy/text/breathing-text";
 
 const settings = {
@@ -18,11 +19,14 @@ const settings = {
     content: 'Start Scaling Now',
     href: '#'
   },
+  settings: {
+    url: 'https://closerintellect.ai',
+  },
   secondaryCTA: {
     content: 'Watch Demo',
     href: '#'
   },
-  illustration: '/hero-ui.png',
+  illustration: '/hero-safari.png',
   reviews: [
     {
       id: 1,
@@ -144,17 +148,15 @@ export default function Hero() {
         </SlideEffect>
 
         {/* Illustration */}
-        <SlideEffect className="relative" isSpring={false} duration={1.3}>
-          <Image
-            src={settings.illustration}
-            alt='illustration'
-            width={1920}
-            height={1080}
-            className="rounded-2xl shadow-soft border border-slate-100"
-            priority
-            loading="eager"
-          />
-          <FadeEffect />
+        <SlideEffect className="relative w-full max-w-7xl mx-auto" isSpring={false} duration={1.3}>
+          <div className="shadow-2xl rounded-[20px] overflow-hidden relative">
+            <Safari 
+              url={settings.settings.url} 
+              imageSrc={settings.illustration} 
+              className="w-full"
+            />
+            <FadeEffect />
+          </div>
         </SlideEffect>
       </section>
     </div>

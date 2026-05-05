@@ -45,10 +45,12 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
   // Pre-generate random properties for each color on the client only
   const circleProps = useMemo(() => {
     if (!isClient) return []
-    return colors.map(() => ({
-      top: `${Math.random() * 80 - 15}%`,
-      left: `${Math.random() * 80 - 15}%`,
-      sizeMultiplier: randomInt(0.8, 1.2),
+    // Double the colors to get more coverage
+    const extendedColors = [...colors, ...colors, ...colors]
+    return extendedColors.map(() => ({
+      top: `${Math.random() * 140 - 20}%`,
+      left: `${Math.random() * 140 - 20}%`,
+      sizeMultiplier: randomInt(1.0, 1.8),
       tx1: Math.random() - 0.5,
       ty1: Math.random() - 0.5,
       tx2: Math.random() - 0.5,
@@ -65,8 +67,9 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
 
   return (
     <div ref={containerRef} className={cn("absolute inset-0 overflow-hidden", className)}>
-      <div className={cn(`absolute inset-0`, blurClass)}>
+      <div className={cn(`absolute inset-0 scale-125`, blurClass)}>
         {circleProps.map((props, index) => {
+
           const animationProps = {
             animation: `background-gradient ${speed}s infinite ease-in-out`,
             animationDuration: `${speed}s`,
@@ -82,6 +85,9 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
             "--ty-4": props.ty4,
           } as React.CSSProperties
 
+          // Use modulo to cycle through colors if extended
+          const color = colors[index % colors.length]
+
           return (
             <svg
               key={index}
@@ -91,7 +97,7 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
               viewBox="0 0 100 100"
               style={animationProps}
             >
-              <circle cx="50" cy="50" r="50" fill={colors[index]} />
+              <circle cx="50" cy="50" r="50" fill={color} />
             </svg>
           )
         })}

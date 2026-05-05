@@ -5,12 +5,11 @@ import Link from "next/link"
 
 const settings = {
   links: [
-    { title: 'About', href: '/' },
-    { title: 'Blog', href: '/' },
-    { title: 'Jobs', href: '/' },
-    { title: 'Press', href: '/' },
-    { title: 'Affiliate', href: '/' },
-    { title: 'Contact Us', href: '/' },
+    { title: 'Home', href: '/' },
+    { title: 'Features', href: '#features' },
+    { title: 'Pricing', href: '#pricing' },
+    { title: 'Testimonials', href: '#testimonials' },
+    { title: 'FAQ', href: '#faq' },
   ],
   socialMedia: [
     { title: 'Facebook', icon: Facebook, href: '/' },

@@ -18,9 +18,9 @@ const gradientColors = ["#2563eb", "#4f46e5", "#7c3aed", "#0891b2", "#1d4ed8"]
 
 export default function CTA() {
   return (
-    <SlideEffect isSpring={false} className="relative isolate overflow-hidden space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center p-8 md:px-24 md:py-32 flex flex-col items-center justify-center rounded-3xl bg-slate-950 shadow-2xl shadow-blue-900/30">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+    <SlideEffect isSpring={false} className="relative isolate overflow-hidden mx-auto text-center p-8 md:px-24 md:py-32 rounded-3xl bg-slate-950 shadow-2xl shadow-blue-900/30">
+      {/* Background Gradient - absolute, fully outside flex flow */}
+      <div className="!absolute inset-0 z-0 pointer-events-none !m-0">
         <AnimatedGradient colors={gradientColors} speed={10} blur="medium" />
       </div>
 
