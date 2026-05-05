@@ -71,14 +71,19 @@ export default function Hero() {
         {/* Headline */}
         <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-6/7">
           <TextBlurEffect className="text-slate-900">Turn Every Rep into a</TextBlurEffect>{" "}
-          <span className="inline-block text-blue-600">
-            <BreathingText
-              staggerDuration={0.08}
-              fromFontVariationSettings="'wght' 100, 'slnt' 0"
-              toFontVariationSettings="'wght' 800, 'slnt' -10"
-            >
+          <span className="relative inline-block text-blue-600 whitespace-nowrap align-bottom">
+            <span className="invisible font-black select-none pointer-events-none" aria-hidden="true">
               Top Performer
-            </BreathingText>
+            </span>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <BreathingText
+                staggerDuration={0.08}
+                fromFontVariationSettings="'wght' 100, 'slnt' 0"
+                toFontVariationSettings="'wght' 800, 'slnt' -10"
+              >
+                Top Performer
+              </BreathingText>
+            </div>
           </span>{" "}
           <TextBlurEffect className="text-slate-900">with AI</TextBlurEffect>
         </h1>
