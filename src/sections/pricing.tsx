@@ -4,6 +4,7 @@ import Card from "@/components/card"
 import SlideEffect from "@/components/slide-effect"
 import { Button } from "@/components/ui/button"
 import { CircleCheck } from "lucide-react"
+import { GlareHover } from "@/components/ui/glare-hover"
 
 const settings = {
   title: 'Simple, Transparent Pricing',
@@ -96,29 +97,31 @@ export default function Pricing() {
 
         {/* plan 2 */}
         <SlideEffect isSpring={false} delay={0.2} className="flex flex-col gap-6 text-base">
-          <Card className="bg-slate-900 border-slate-800 shadow-2xl shadow-blue-500/10">
-            <div className="w-full flex items-center gap-2 justify-between">
-              <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
-              <div className="text-[10px] bg-blue-600 px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
-            </div>
-            <div className="flex items-baseline gap-1 my-4">
-              <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
-              <span className="text-slate-400 text-sm">/month</span>
-            </div>
-            <Button className="w-full btn-gradient border-none mb-6">{settings.plan_2.cta}</Button>
-            <div className="text-start space-y-6">
-              <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
-
-              <div className="flex flex-col items-start gap-4 text-sm">
-                {settings.plan_2.features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CircleCheck className="text-blue-500" size={16} />
-                    <span className="text-slate-300">{feature}</span>
-                  </div>
-                ))}
+          <GlareHover className="rounded-3xl w-full h-full" color="#ffffff" opacity={0.4} duration={600}>
+            <Card className="!bg-slate-900 border-slate-800 shadow-2xl shadow-blue-500/20 scale-105 z-10 w-full h-full">
+              <div className="w-full flex items-center gap-2 justify-between">
+                <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
+                <div className="text-[10px] bg-blue-600 px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
               </div>
-            </div>
-          </Card>
+              <div className="flex items-baseline gap-1 my-4">
+                <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
+                <span className="text-slate-400 text-sm">/month</span>
+              </div>
+              <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-blue-600/20">{settings.plan_2.cta}</Button>
+              <div className="text-start space-y-6">
+                <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
+   
+                <div className="flex flex-col items-start gap-4 text-sm">
+                  {settings.plan_2.features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <CircleCheck className="text-blue-500" size={16} />
+                      <span className="text-slate-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </GlareHover>
         </SlideEffect>
 
         {/* plan 3 */}
