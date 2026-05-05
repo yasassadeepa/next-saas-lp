@@ -46,7 +46,7 @@ export default function Footer() {
       {/* Large Brand Mark (Landscape View) */}
       <div className="w-full relative mt-4 md:mt-8 select-none pointer-events-none opacity-[0.05] md:opacity-[0.1]">
         <h2 className="text-[8vw] font-black text-center tracking-tighter leading-none whitespace-nowrap uppercase">
-          Closer Intellect
+          Closer Intellect AI
         </h2>
       </div>
 
