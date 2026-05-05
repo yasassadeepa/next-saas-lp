@@ -9,6 +9,7 @@ import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import BreathingText from "@/components/fancy/text/breathing-text";
 
 const settings = {
   headline: 'Turn Every Rep into a Top Performer with AI',
@@ -68,8 +69,18 @@ export default function Hero() {
 
       <section className="flex flex-col gap-8 lg:gap-11 items-center text-center">
         {/* Headline */}
-        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-5/6">
-          <TextBlurEffect className='text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600'>{settings.headline}</TextBlurEffect>
+        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-6/7">
+          <TextBlurEffect className="text-slate-900">Turn Every Rep into a</TextBlurEffect>{" "}
+          <span className="inline-block text-blue-600">
+            <BreathingText
+              staggerDuration={0.08}
+              fromFontVariationSettings="'wght' 100, 'slnt' 0"
+              toFontVariationSettings="'wght' 800, 'slnt' -10"
+            >
+              Top Performer
+            </BreathingText>
+          </span>{" "}
+          <TextBlurEffect className="text-slate-900">with AI</TextBlurEffect>
         </h1>
 
         {/* Sub-headline */}
