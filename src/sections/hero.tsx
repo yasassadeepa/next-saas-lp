@@ -68,7 +68,7 @@ export default function Hero() {
 
       <section className="flex flex-col gap-8 lg:gap-11 items-center text-center">
         {/* Headline */}
-        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-4/5">
+        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-5/6">
           <TextBlurEffect className='text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600'>{settings.headline}</TextBlurEffect>
         </h1>
 
