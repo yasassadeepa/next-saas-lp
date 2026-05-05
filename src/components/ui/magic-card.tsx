@@ -73,7 +73,7 @@ export function MagicCard(props: MagicCardProps) {
   const glowOpacity = isOrbMode(props) ? (props.glowOpacity ?? 0.9) : 0.9
   
   // Adapted to avoid next-themes dependency
-  const isDarkTheme = false 
+  const isDarkTheme = true 
 
   const mouseX = useMotionValue(-gradientSize)
   const mouseY = useMotionValue(-gradientSize)
@@ -151,7 +151,7 @@ export function MagicCard(props: MagicCardProps) {
   return (
     <motion.div
       className={cn(
-        "group relative isolate overflow-hidden rounded-3xl border border-transparent bg-white shadow-soft",
+        "group relative isolate overflow-hidden rounded-3xl border border-transparent bg-secondary shadow-soft",
         className
       )}
       onPointerMove={handlePointerMove}
@@ -159,7 +159,7 @@ export function MagicCard(props: MagicCardProps) {
       onPointerEnter={() => reset("enter")}
       style={{
         background: useMotionTemplate`
-          linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(var(--color-secondary) 0 0) padding-box,
           radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
             ${gradientFrom},
             ${gradientTo},
@@ -168,7 +168,7 @@ export function MagicCard(props: MagicCardProps) {
         `,
       }}
     >
-      <div className="bg-white absolute inset-px z-20 rounded-3xl" />
+      <div className="bg-secondary absolute inset-px z-20 rounded-3xl" />
 
       {mode === "gradient" && (
         <motion.div

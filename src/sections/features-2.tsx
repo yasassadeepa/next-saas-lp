@@ -35,7 +35,7 @@ export default function Features2() {
 
       {/* Title */}
       <SlideEffect>
-        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600 font-bold leading-normal">{settings.title}</h2>
+        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</h2>
       </SlideEffect>
 
       {/* Description */}
@@ -45,9 +45,9 @@ export default function Features2() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* card 1 */}
         <SlideEffect direction="right" className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100 flex flex-col justify-between overflow-hidden">
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border flex flex-col justify-between overflow-hidden">
             <div className="mb-6">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_1.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_1.title}</h3>
               <p className="mb-4 text-muted">{settings.card_1.content}</p>
             </div>
             <Image src={settings.card_1.image} alt={settings.card_1.title} width={512} height={512} className="rounded-lg shadow-md mt-auto" />
@@ -56,9 +56,9 @@ export default function Features2() {
 
         {/* card 2 */}
         <SlideEffect direction="left" duration={1.3} className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100 flex flex-col justify-between overflow-hidden">
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border flex flex-col justify-between overflow-hidden">
             <div className="mb-6">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_2.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_2.title}</h3>
               <p className="text-muted">{settings.card_2.content}</p>
             </div>
             <div className="relative mt-auto">

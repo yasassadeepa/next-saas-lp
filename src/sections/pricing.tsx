@@ -63,7 +63,7 @@ export default function Pricing() {
     <div id='pricing' className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center">
       {/* Title */}
       <SlideEffect>
-        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600 font-bold leading-normal">{settings.title}</h2>
+        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</h2>
       </SlideEffect>
 
       {/* Description */}
@@ -73,21 +73,21 @@ export default function Pricing() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* plan 1 */}
         <SlideEffect isSpring={false} delay={0.1} className="text-base">
-          <Card className="bg-white shadow-soft border-slate-100 hover:shadow-xl transition-shadow">
-            <div className="text-start text-slate-900 font-bold text-lg">{settings.plan_1.planName}</div>
+          <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
+            <div className="text-start text-white font-bold text-lg">{settings.plan_1.planName}</div>
             <div className="flex items-baseline gap-1 my-4">
-              <span className="font-bold text-4xl text-slate-900">{settings.plan_1.currency}{settings.plan_1.price}</span>
+              <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
               <span className="text-muted text-sm">/month</span>
             </div>
-            <Button className="w-full border-slate-200 text-slate-900 hover:bg-slate-50 mb-6" variant='outline'>{settings.plan_1.cta}</Button>
+            <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_1.cta}</Button>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_1.description}</p>
 
               <div className="flex flex-col items-start gap-4 text-sm">
                 {settings.plan_1.features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CircleCheck className="text-blue-600" size={16} />
-                    <span className="text-slate-700">{feature}</span>
+                    <CircleCheck className="text-primary" size={16} />
+                    <span className="text-zinc-300">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -97,24 +97,24 @@ export default function Pricing() {
 
         {/* plan 2 */}
         <SlideEffect isSpring={false} delay={0.2} className="flex flex-col gap-6 text-base">
-          <GlareHover className="rounded-3xl w-full h-full" color="#ffffff" opacity={0.4} duration={600}>
-            <Card className="!bg-slate-900 border-slate-800 shadow-2xl shadow-blue-500/20 scale-105 z-10 w-full h-full">
+          <GlareHover className="rounded-3xl w-full h-full" color="#EF4444" opacity={0.2} duration={600}>
+            <Card className="!bg-[#0a0a0a] border-primary/50 shadow-2xl shadow-primary/20 scale-105 z-10 w-full h-full">
               <div className="w-full flex items-center gap-2 justify-between">
                 <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
-                <div className="text-[10px] bg-blue-600 px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
+                <div className="text-[10px] bg-primary px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
               </div>
               <div className="flex items-baseline gap-1 my-4">
                 <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
                 <span className="text-slate-400 text-sm">/month</span>
               </div>
-              <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-blue-600/20">{settings.plan_2.cta}</Button>
+              <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
               <div className="text-start space-y-6">
                 <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
    
                 <div className="flex flex-col items-start gap-4 text-sm">
                   {settings.plan_2.features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CircleCheck className="text-blue-500" size={16} />
+                      <CircleCheck className="text-primary" size={16} />
                       <span className="text-slate-300">{feature}</span>
                     </div>
                   ))}
@@ -126,21 +126,21 @@ export default function Pricing() {
 
         {/* plan 3 */}
         <SlideEffect isSpring={false} delay={0.3} className="flex flex-col gap-6 text-base">
-          <Card className="bg-white shadow-soft border-slate-100 hover:shadow-xl transition-shadow">
-            <div className="text-start text-slate-900 font-bold text-lg">{settings.plan_3.planName}</div>
+          <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
+            <div className="text-start text-white font-bold text-lg">{settings.plan_3.planName}</div>
             <div className="flex items-baseline gap-1 my-4">
-              <span className="font-bold text-4xl text-slate-900">{settings.plan_3.currency}{settings.plan_3.price}</span>
+              <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
               <span className="text-muted text-sm">/month</span>
             </div>
-            <Button className="w-full border-slate-200 text-slate-900 hover:bg-slate-50 mb-6" variant='outline'>{settings.plan_3.cta}</Button>
+            <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_3.description}</p>
 
               <div className="flex flex-col items-start gap-4 text-sm">
                 {settings.plan_3.features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <CircleCheck className="text-blue-600" size={16} />
-                    <span className="text-slate-700">{feature}</span>
+                    <CircleCheck className="text-primary" size={16} />
+                    <span className="text-zinc-300">{feature}</span>
                   </div>
                 ))}
               </div>

@@ -35,15 +35,15 @@ export default function FAQ() {
     <div id='faq' className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center">
       {/* Title */}
       <SlideEffect>
-        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600 font-bold leading-normal">{settings.title}</h2>
+        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</h2>
       </SlideEffect>
 
       {/* Accordion */}
       <SlideEffect>
-        <Accordion type="single" collapsible className="max-w-2xl mx-auto text-base text-slate-700">
+        <Accordion type="single" collapsible className="max-w-2xl mx-auto text-base text-zinc-300">
           {settings.faqs.map((faq, index) => (
-            <AccordionItem key={index} value={index + '-item'} className="border-slate-200">
-              <AccordionTrigger className="hover:text-blue-600 transition-colors text-left font-bold">{faq.question}</AccordionTrigger>
+            <AccordionItem key={index} value={index + '-item'} className="border-border">
+              <AccordionTrigger className="hover:text-primary transition-colors text-left font-bold text-white">{faq.question}</AccordionTrigger>
               <AccordionContent className="text-muted leading-relaxed">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}

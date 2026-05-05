@@ -60,7 +60,7 @@ export default function Features4() {
       </SlideEffect>
 
       {/* Title */}
-      <TextRevealEffect className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600 font-bold leading-normal">{settings.title}</TextRevealEffect>
+      <TextRevealEffect className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</TextRevealEffect>
 
       {/* Description */}
       <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
@@ -69,9 +69,9 @@ export default function Features4() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* card 1 */}
         <SlideEffect direction="top" className="grid-cols-1 lg:col-span-2 h-full" isSpring={false}>
-          <Card className="flex flex-col lg:flex-row justify-center items-center shadow-soft hover:shadow-xl transition-shadow border-slate-100">
+          <Card className="flex flex-col lg:flex-row justify-center items-center shadow-soft hover:shadow-xl transition-shadow border-border">
             <div className="space-y-3 md:space-y-5 flex-1">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_1.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_1.title}</h3>
               <p className="mb-8 lg:mb-16 text-muted">{settings.card_1.content}</p>
               <Link href={settings.card_1.CTA.href}>
                 <Button className="btn-gradient border-none">{settings.card_1.CTA.content}</Button>
@@ -84,16 +84,16 @@ export default function Features4() {
 
         {/* card 2 */}
         <SlideEffect direction="right" className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100">
-            <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_2.title}</h3>
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border">
+            <h3 className="text-xl md:text-title text-white font-bold">{settings.card_2.title}</h3>
             <p className="text-muted">{settings.card_2.content}</p>
           </Card>
         </SlideEffect>
 
         {/* card 3 */}
         <SlideEffect direction="left" delay={0.2} className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100">
-            <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_3.title}</h3>
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border">
+            <h3 className="text-xl md:text-title text-white font-bold">{settings.card_3.title}</h3>
             <p className="text-muted">{settings.card_3.content}</p>
           </Card>
         </SlideEffect>

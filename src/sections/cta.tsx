@@ -14,11 +14,11 @@ const settings = {
   }
 }
 
-const gradientColors = ["#2563eb", "#4f46e5", "#7c3aed", "#0891b2", "#1d4ed8"]
+const gradientColors = ["#dc2626", "#991b1b", "#7f1d1d", "#450a0a", "#b91c1c"]
 
 export default function CTA() {
   return (
-    <SlideEffect isSpring={false} className="relative isolate overflow-hidden mx-auto text-center p-8 md:px-24 md:py-32 rounded-3xl bg-slate-950 shadow-2xl shadow-blue-900/30">
+    <SlideEffect isSpring={false} className="relative isolate overflow-hidden mx-auto text-center p-8 md:px-24 md:py-32 rounded-3xl bg-secondary shadow-2xl shadow-primary/20">
       {/* Background Gradient - absolute, fully outside flex flow */}
       <div className="!absolute inset-0 z-0 pointer-events-none !m-0">
         <AnimatedGradient colors={gradientColors} speed={10} blur="medium" />
@@ -34,7 +34,7 @@ export default function CTA() {
 
         {/* CTA */}
         <Link href={settings.CTA.href} className="mt-4">
-          <Button className="btn-gradient border-none px-12 h-14 text-lg font-bold shadow-xl shadow-blue-600/20" size='lg'>{settings.CTA.content}</Button>
+          <Button className="btn-gradient border-none px-12 h-14 text-lg font-bold shadow-xl shadow-primary/20" size='lg'>{settings.CTA.content}</Button>
         </Link>
       </div>
     </SlideEffect>

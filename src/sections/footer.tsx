@@ -23,28 +23,28 @@ const settings = {
 
 export default function Footer() {
   return (
-    <footer className="w-full py-8 md:py-16 flex flex-col items-center justify-center gap-7 md:gap-10 text-sm border-t border-slate-100 text-muted overflow-hidden">
+    <footer className="w-full py-8 md:py-16 flex flex-col items-center justify-center gap-7 md:gap-10 text-sm border-t border-border text-muted overflow-hidden">
       {/* Brand Logo */}
       <Link href="/" className="hover:opacity-80 transition-opacity">
         <Logo className="scale-125" />
       </Link>
 
       {/* Nav Links */}
-      <div className="flex flex-wrap md:flex-row items-center justify-center gap-7 md:gap-10 font-medium text-slate-600">
+      <div className="flex flex-wrap md:flex-row items-center justify-center gap-7 md:gap-10 font-medium text-muted">
         {settings.links.map(link => (
-          <Link key={link.title} href={link.href} className="hover:text-blue-600 transition-colors">{link.title}</Link>
+          <Link key={link.title} href={link.href} className="hover:text-primary transition-colors">{link.title}</Link>
         ))}
       </div>
 
       {/* Social links */}
-      <div className="flex flex-wrap md:flex-row items-center justify-center gap-7 md:gap-10 text-slate-400">
+      <div className="flex flex-wrap md:flex-row items-center justify-center gap-7 md:gap-10 text-muted">
         {settings.socialMedia.map((social, index) => (
-          <Link title={social.title} key={index} href={social.href} className="hover:text-blue-600 transition-colors"><social.icon size={20} /></Link>
+          <Link title={social.title} key={index} href={social.href} className="hover:text-primary transition-colors"><social.icon size={20} /></Link>
         ))}
       </div>
 
       {/* Large Brand Mark (Landscape View) */}
-      <div className="w-full relative mt-4 md:mt-8 select-none pointer-events-none opacity-[0.03] md:opacity-[0.05]">
+      <div className="w-full relative mt-4 md:mt-8 select-none pointer-events-none opacity-[0.05] md:opacity-[0.1]">
         <h2 className="text-[8vw] font-black text-center tracking-tighter leading-none whitespace-nowrap uppercase">
           Closer Intellect
         </h2>

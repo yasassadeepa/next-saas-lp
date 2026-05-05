@@ -73,9 +73,9 @@ export default function Hero() {
 
       <section className="flex flex-col gap-8 lg:gap-11 items-center text-center">
         {/* Headline */}
-        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-6/7">
-          <TextBlurEffect className="text-slate-900">Turn Every Rep into a</TextBlurEffect>{" "}
-          <span className="relative inline-block text-blue-600 whitespace-nowrap align-bottom">
+        <h1 className="text-white text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-6/7">
+          <TextBlurEffect className="text-white">Turn Every Rep into a</TextBlurEffect>{" "}
+          <span className="relative inline-block text-primary whitespace-nowrap align-bottom">
             <span className="invisible font-black select-none pointer-events-none" aria-hidden="true">
               Top Performer
             </span>
@@ -89,7 +89,7 @@ export default function Hero() {
               </BreathingText>
             </div>
           </span>{" "}
-          <TextBlurEffect className="text-slate-900">with AI</TextBlurEffect>
+          <TextBlurEffect className="text-white">with AI</TextBlurEffect>
         </h1>
 
         {/* Sub-headline */}
@@ -119,11 +119,11 @@ export default function Hero() {
             </Link>
 
             <Link href={settings.secondaryCTA.href} className="w-full">
-              <Button size='lg' className="w-full hidden lg:flex border-slate-200 text-slate-900 hover:bg-slate-50" variant='outline'>
+              <Button size='lg' className="w-full hidden lg:flex border-border text-white hover:bg-secondary" variant='outline'>
                 {settings.secondaryCTA.content}
               </Button>
 
-              <Button size='default' className="w-full flex lg:hidden border-slate-200 text-slate-900 hover:bg-slate-50" variant='outline'>
+              <Button size='default' className="w-full flex lg:hidden border-border text-white hover:bg-secondary" variant='outline'>
                 {settings.secondaryCTA.content}
               </Button>
             </Link>

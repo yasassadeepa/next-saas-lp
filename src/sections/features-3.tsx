@@ -44,21 +44,21 @@ const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { ic
   const toRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex w-full items-center justify-center rounded-xl bg-slate-50/50 px-12 py-10 border border-slate-100 mt-auto" ref={containerRef}>
+    <div className="relative flex w-full items-center justify-center rounded-xl bg-secondary/50 px-12 py-10 border border-border mt-auto" ref={containerRef}>
       <div className="flex w-full flex-row items-center justify-between">
         <div className="flex flex-col justify-center">
-          <div ref={fromRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-slate-200 bg-white p-2 sm:p-3 shadow-sm">
-            <Icon1 className="size-5 sm:size-6 text-slate-600" />
+          <div ref={fromRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-border bg-secondary p-2 sm:p-3 shadow-sm">
+            <Icon1 className="size-5 sm:size-6 text-muted" />
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <div ref={midRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-blue-200 bg-blue-600 p-2 sm:p-3 shadow-lg shadow-blue-200/50">
+          <div ref={midRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-primary/50 bg-primary p-2 sm:p-3 shadow-lg shadow-primary/20">
             <Icon2 className="size-5 sm:size-6 text-white" />
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <div ref={toRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-slate-200 bg-white p-2 sm:p-3 shadow-sm">
-            <Icon3 className="size-5 sm:size-6 text-slate-600" />
+          <div ref={toRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-border bg-secondary p-2 sm:p-3 shadow-sm">
+            <Icon3 className="size-5 sm:size-6 text-muted" />
           </div>
         </div>
       </div>
@@ -67,16 +67,16 @@ const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { ic
         containerRef={containerRef}
         fromRef={fromRef}
         toRef={midRef}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#1d4ed8"
+        gradientStartColor="#dc2626"
+        gradientStopColor="#991b1b"
         duration={3}
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={midRef}
         toRef={toRef}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#1d4ed8"
+        gradientStartColor="#dc2626"
+        gradientStopColor="#991b1b"
         duration={3}
         delay={1.5}
       />
@@ -94,7 +94,7 @@ export default function Features3() {
 
       {/* Title */}
       <SlideEffect>
-        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600 font-bold leading-normal">{settings.title}</h2>
+        <h2 className="text-2xl md:text-4xl lg:text-header text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 font-bold leading-normal">{settings.title}</h2>
       </SlideEffect>
 
       {/* Description */}
@@ -104,9 +104,9 @@ export default function Features3() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* card 1 */}
         <SlideEffect direction="top" className="col-span-1 h-full" isSpring={false}>
-          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+          <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_1.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_1.title}</h3>
               <p className="text-muted">{settings.card_1.content}</p>
             </div>
             <IntegrationAnimation icon1={Users} icon2={Zap} icon3={ShieldCheck} />
@@ -115,9 +115,9 @@ export default function Features3() {
 
         {/* card 2 */}
         <SlideEffect direction="top" delay={0.2} className="col-span-1 h-full" isSpring={false}>
-          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+          <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_2.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_2.title}</h3>
               <p className="text-muted">{settings.card_2.content}</p>
             </div>
             <IntegrationAnimation icon1={FileText} icon2={Zap} icon3={Signature} />
@@ -126,9 +126,9 @@ export default function Features3() {
 
         {/* card 3 */}
         <SlideEffect direction="top" delay={0.3} className="col-span-1 h-full" isSpring={false}>
-          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+          <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
-              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_3.title}</h3>
+              <h3 className="text-xl md:text-title text-white font-bold">{settings.card_3.title}</h3>
               <p className="text-muted">{settings.card_3.content}</p>
             </div>
             <IntegrationAnimation icon1={Phone} icon2={Zap} icon3={Database} />

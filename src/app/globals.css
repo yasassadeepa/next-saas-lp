@@ -2,13 +2,13 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-background: #FFFFFF;
-  --color-foreground: #0F172A;
-  --color-secondary: #F8FAFC;
-  --color-primary: #2563EB;
-  --color-accent: #6366F1;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
+  --color-background: #000000;
+  --color-foreground: #FFFFFF;
+  --color-secondary: #111111;
+  --color-primary: #DC2626;
+  --color-accent: #EF4444;
+  --color-muted: #71717a;
+  --color-border: #27272a;
 
   --text-base: 18px;
   --text-link: 16px;
@@ -16,7 +16,7 @@
   --text-title: 28px;
   --text-hero: 96px;
 
-  --shadow-soft: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
 
   --animate-background-gradient: background-gradient;
   @keyframes background-gradient {
@@ -45,7 +45,7 @@
   &:hover {
     filter: brightness(1.1);
     transform: translateY(-1px);
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3);
   }
 }
 

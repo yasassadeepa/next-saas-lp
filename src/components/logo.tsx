@@ -11,8 +11,8 @@ export default function Logo({ className }: { className?: string }) {
         className="h-10 w-10 object-contain"
         priority
       />
-      <span className="text-xl font-bold tracking-tight text-slate-900">
-        Closer <span className="text-blue-600">Intellect</span>
+      <span className="text-xl font-bold tracking-tight text-white">
+        Closer <span className="text-primary">Intellect</span>
       </span>
     </div>
   )
