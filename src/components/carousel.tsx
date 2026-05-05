@@ -7,8 +7,8 @@ export default function Carousel({ images, itemWidth = 40, itemHeight = 40, spac
 
   return (
     <div className="overflow-hidden w-full relative h-full">
-      <div className='w-16 h-full absolute top-0 left-0 bg-gradient-to-r from-secondary to-transparent z-20'></div>
-      <div className='w-16 h-full absolute top-0 right-0 bg-gradient-to-l from-secondary to-transparent z-20'></div>
+      <div className='w-16 h-full absolute top-0 left-0 bg-gradient-to-r from-white to-transparent z-20'></div>
+      <div className='w-16 h-full absolute top-0 right-0 bg-gradient-to-l from-white to-transparent z-20'></div>
 
       <motion.div
         className="flex space-x-0 h-fit"

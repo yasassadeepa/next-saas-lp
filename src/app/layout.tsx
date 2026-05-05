@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/lenis";
 
-const dmSans = DM_Sans({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 
 export const metadata: Metadata = {
-  title: "Next SaaS",
-  description: "Change this"
+  title: "Closer Intellect AI | AI Sales Enablement Platform",
+  description: "Automate your outreach with AI Voice & SMS. The 'Second Brain' for your sales team."
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.className} antialiased w-full min-h-screen overflow-x-hidden`}
+        className={`${inter.className} antialiased w-full min-h-screen overflow-x-hidden`}
       >
         <LenisProvider>
           {children}

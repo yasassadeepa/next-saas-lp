@@ -11,47 +11,52 @@ import Link from "next/link";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
 const settings = {
-  headline: 'Hello YouTube',
-  subheadline: 'Privacy-friendly web analytics made and hosted in Germany — powerful, cookie-free, and fully compliant with GDPR, CCPA, and PECR.',
+  headline: 'Turn Every Rep into a Top Performer with AI',
+  subheadline: 'Closer Intellect AI is the high-velocity Sales Enablement Platform. Scale outreach with AI Voice & SMS while providing a "Second Brain" for live intelligence.',
   mainCTA: {
-    content: 'try it for free',
+    content: 'Start Scaling Now',
     href: '#'
   },
   secondaryCTA: {
-    content: 'view live demo',
+    content: 'Watch Demo',
     href: '#'
   },
-  illustration: '/illustration.svg',
+  illustration: '/hero-ui.png',
   reviews: [
     {
+      id: 1,
       name: "John Doe",
-      designation: "Software Engineer",
+      designation: "Sales Director",
       image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
+        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=150&q=80",
     },
     {
+      id: 2,
       name: "Robert Johnson",
-      designation: "Product Manager",
+      designation: "VP of Sales",
       image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
     },
     {
+      id: 3,
       name: "Jane Smith",
-      designation: "Data Scientist",
+      designation: "Agency Owner",
       image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80",
     },
     {
+      id: 4,
       name: "Emily Davis",
-      designation: "UX Designer",
+      designation: "SDR Manager",
       image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
     },
     {
+      id: 5,
       name: "Tyler Durden",
-      designation: "Soap Developer",
+      designation: "Growth Lead",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
     }
   ]
 }
@@ -63,14 +68,14 @@ export default function Hero() {
 
       <section className="flex flex-col gap-8 lg:gap-11 items-center text-center">
         {/* Headline */}
-        <h1 className="text-black text-4xl md:text-6xl lg:text-hero font-medium tracking-tight leading-none xl:max-w-3/4">
-          <TextBlurEffect className='text-transparent bg-clip-text bg-gradient-to-b from-black to-black/60'>{settings.headline}</TextBlurEffect>
+        <h1 className="text-slate-900 text-4xl md:text-6xl lg:text-hero font-bold tracking-tight leading-none xl:max-w-4/5">
+          <TextBlurEffect className='text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-600'>{settings.headline}</TextBlurEffect>
         </h1>
 
         {/* Sub-headline */}
         <SlideEffect
           delay={0}
-          className="text-sm lg:text-base px-6 sm:px-10 md:px-0 md:max-w-3/4 mx-auto"
+          className="text-muted text-sm lg:text-lg px-6 sm:px-10 md:px-0 md:max-w-2/3 mx-auto leading-relaxed"
         >
           {settings.subheadline}
         </SlideEffect>
@@ -82,23 +87,23 @@ export default function Hero() {
           {/* Buttons */}
           <div className="flex flex-col md:flex-row items-center w-full justify-center gap-3 md:gap-4 mt-1">
             <Link href={settings.mainCTA.href} className="w-full">
-              <Button size='lg' className="capitalize w-full hidden lg:flex">
+              <Button size='lg' className="w-full hidden lg:flex btn-gradient px-8">
                 {settings.mainCTA.content}
                 <ArrowRight />
               </Button>
 
-              <Button size='default' className="capitalize w-full flex lg:hidden">
+              <Button size='default' className="w-full flex lg:hidden btn-gradient">
                 {settings.mainCTA.content}
                 <ArrowRight />
               </Button>
             </Link>
 
             <Link href={settings.secondaryCTA.href} className="w-full">
-              <Button size='lg' className="capitalize w-full hidden lg:flex" variant='secondary'>
+              <Button size='lg' className="w-full hidden lg:flex border-slate-200 text-slate-900 hover:bg-slate-50" variant='outline'>
                 {settings.secondaryCTA.content}
               </Button>
 
-              <Button size='default' className="capitalize w-full flex lg:hidden" variant='secondary'>
+              <Button size='default' className="w-full flex lg:hidden border-slate-200 text-slate-900 hover:bg-slate-50" variant='outline'>
                 {settings.secondaryCTA.content}
               </Button>
             </Link>
@@ -129,6 +134,7 @@ export default function Hero() {
             alt='illustration'
             width={1920}
             height={1080}
+            className="rounded-2xl shadow-soft border border-slate-100"
             priority
             loading="eager"
           />
