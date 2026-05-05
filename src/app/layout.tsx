@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/providers/lenis";
+import Background from "@/components/background";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased w-full min-h-screen overflow-x-hidden`}
+        className={`${inter.className} antialiased w-full min-h-screen overflow-x-hidden relative`}
       >
+        <Background />
         <LenisProvider>
           {children}
         </LenisProvider>
