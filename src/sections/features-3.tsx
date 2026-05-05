@@ -1,9 +1,20 @@
 'use client'
 
+import React, { useRef } from "react"
 import Badge from "@/components/badge"
-import Card from "@/components/card"
+import { MagicCard } from "@/components/ui/magic-card"
 import SlideEffect from "@/components/slide-effect"
-import Image from "next/image"
+import { AnimatedBeam } from "@/components/ui/animated-beam"
+import { 
+  Users, 
+  Zap, 
+  ShieldCheck, 
+  FileText, 
+  Signature, 
+  Phone, 
+  Database,
+  ArrowRight
+} from "lucide-react"
 
 const settings = {
   badge: {
@@ -15,18 +26,62 @@ const settings = {
   card_1: {
     title: 'Lead Marketplace',
     content: 'Seamlessly share and claim high-quality prospects within your agency.',
-    image: 'https://cdn.worldvectorlogo.com/logos/salesforce-2.svg'
   },
   card_2: {
     title: 'Automated Contracts',
     content: 'Instant PDF generation to close deals the moment a lead says "Yes."',
-    image: 'https://cdn.worldvectorlogo.com/logos/adobe-pdf-icon.svg'
   },
   card_3: {
     title: 'Smart CRM Sync',
     content: 'Automatically sync all call notes, sentiment data, and recordings to your existing CRM.',
-    image: 'https://cdn.worldvectorlogo.com/logos/hubspot.svg'
   },
+}
+
+const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { icon1: any, icon2: any, icon3: any }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const fromRef = useRef<HTMLDivElement>(null);
+  const midRef = useRef<HTMLDivElement>(null);
+  const toRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className="relative flex w-full items-center justify-center rounded-xl bg-slate-50/50 px-12 py-10 border border-slate-100 mt-auto" ref={containerRef}>
+      <div className="flex w-full flex-row items-center justify-between">
+        <div className="flex flex-col justify-center">
+          <div ref={fromRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-slate-200 bg-white p-2 sm:p-3 shadow-sm">
+            <Icon1 className="size-5 sm:size-6 text-slate-600" />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center">
+          <div ref={midRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-blue-200 bg-blue-600 p-2 sm:p-3 shadow-lg shadow-blue-200/50">
+            <Icon2 className="size-5 sm:size-6 text-white" />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center">
+          <div ref={toRef} className="z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-slate-200 bg-white p-2 sm:p-3 shadow-sm">
+            <Icon3 className="size-5 sm:size-6 text-slate-600" />
+          </div>
+        </div>
+      </div>
+
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={fromRef}
+        toRef={midRef}
+        gradientStartColor="#3b82f6"
+        gradientStopColor="#1d4ed8"
+        duration={3}
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={midRef}
+        toRef={toRef}
+        gradientStartColor="#3b82f6"
+        gradientStopColor="#1d4ed8"
+        duration={3}
+        delay={1.5}
+      />
+    </div>
+  )
 }
 
 export default function Features3() {
@@ -49,31 +104,37 @@ export default function Features3() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* card 1 */}
         <SlideEffect direction="top" className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100 flex flex-col items-center text-center">
-            <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_1.title}</h3>
-            <p className="mb-6 text-muted">{settings.card_1.content}</p>
-            <Image src={settings.card_1.image} alt={settings.card_1.title} width={80} height={80} className="mt-auto opacity-80" />
-          </Card>
+          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+            <div className="mb-8">
+              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_1.title}</h3>
+              <p className="text-muted">{settings.card_1.content}</p>
+            </div>
+            <IntegrationAnimation icon1={Users} icon2={Zap} icon3={ShieldCheck} />
+          </MagicCard>
         </SlideEffect>
 
         {/* card 2 */}
         <SlideEffect direction="top" delay={0.2} className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100 flex flex-col items-center text-center">
-            <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_2.title}</h3>
-            <p className="mb-6 text-muted">{settings.card_2.content}</p>
-            <Image src={settings.card_2.image} alt={settings.card_1.title} width={80} height={80} className="mt-auto opacity-80" />
-          </Card>
+          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+            <div className="mb-8">
+              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_2.title}</h3>
+              <p className="text-muted">{settings.card_2.content}</p>
+            </div>
+            <IntegrationAnimation icon1={FileText} icon2={Zap} icon3={Signature} />
+          </MagicCard>
         </SlideEffect>
 
         {/* card 3 */}
         <SlideEffect direction="top" delay={0.3} className="col-span-1 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-slate-100 flex flex-col items-center text-center">
-            <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_3.title}</h3>
-            <p className="mb-6 text-muted">{settings.card_3.content}</p>
-            <Image src={settings.card_3.image} alt={settings.card_1.title} width={80} height={80} className="mt-auto opacity-80" />
-          </Card>
+          <MagicCard mode="orb" glowFrom="#dbeafe" glowTo="#60a5fa" glowOpacity={0.4} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-slate-100">
+            <div className="mb-8">
+              <h3 className="text-xl md:text-title text-slate-900 font-bold">{settings.card_3.title}</h3>
+              <p className="text-muted">{settings.card_3.content}</p>
+            </div>
+            <IntegrationAnimation icon1={Phone} icon2={Zap} icon3={Database} />
+          </MagicCard>
         </SlideEffect>
       </div>
     </div>
   )
-}
+}
