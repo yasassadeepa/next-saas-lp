@@ -1,59 +1,53 @@
 'use client'
 
 import Badge from "@/components/badge"
-import Card from "@/components/card"
 import SlideEffect from "@/components/slide-effect"
 import Image from "next/image"
 import { Safari } from "@/components/ui/safari"
-import { Search, Database, Globe, UserPlus, Zap } from "lucide-react"
+import { Brain, Target, ShieldAlert, Sparkles } from "lucide-react"
 
 const settings = {
   badge: {
-    number: 5,
-    text: 'INTELLIGENT PROSPECTING',
+    number: 7,
+    text: 'SALES INTELLIGENCE',
   },
-  title: 'AI Cold Lead Generation',
-  description: 'Stop wasting time on low-quality leads. Our AI-powered search engine finds your ideal prospects across multiple databases and the live web in seconds.',
+  title: 'AI-Powered Battle Plans',
+  description: 'Equip your sales team with personalized strategic briefs for every lead. Our Second Brain analyzes history and context to provide a winning strategy.',
   main_feature: {
-    title: 'Natural Language Lead Search',
-    content: 'Just tell Closer Intellect AI who you want to reach. "Find me SaaS agency owners in New York with more than 50 employees." Our system handles the rest.',
-    image: '/cold_leads_search_dashboard.png',
-    url: 'app.closerintellect.ai/leads/search'
+    title: 'Your Sales Strategic Partner',
+    content: 'Get a customized, step-by-step strategy for closing each specific lead. Generated based on their unique background and interaction history, ensuring you never go into a call unprepared.',
+    image: '/battle_plan.png',
+    url: 'app.closerintellect.ai/intelligence/battle-plan'
   },
   sub_features: [
     {
-      icon: Database,
-      title: 'Apollo Integration',
-      content: 'Access 275M+ verified contacts with direct emails and phone numbers.'
+      icon: Brain,
+      title: 'Memory Triggers',
+      content: 'AI remembers key details from past conversations and prompts you to bring them up to build rapport instantly.'
     },
     {
-      icon: Globe,
-      title: 'Live Web Search',
-      content: 'AI-driven real-time search for leads that aren\'t in standard databases yet.'
+      icon: ShieldAlert,
+      title: 'Failure Prevention',
+      content: 'Identify potential risks and objections in a deal before they happen with AI-driven risk analysis.'
     },
     {
-      icon: UserPlus,
-      title: 'One-Click Reveal',
-      content: 'Instantly unlock verified contact data and enroll them into your sequences.'
+      icon: Target,
+      title: 'Tactical Guidance',
+      content: 'Specific, actionable advice during calls, including investigation questions and soft-skill reminders.'
     }
   ]
 }
 
-export default function FeaturesLeads() {
+export default function FeaturesBattlePlan() {
   return (
     <div className="space-y-12 md:space-y-20 lg:space-y-28 mx-auto">
       <div className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 text-center">
-        {/* Badge */}
         <SlideEffect>
           <Badge number={settings.badge.number} text={settings.badge.text} />
         </SlideEffect>
-
-        {/* Title */}
         <SlideEffect>
           <h2 className="text-2xl md:text-4xl lg:text-header font-bold leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">{settings.title}</h2>
         </SlideEffect>
-
-        {/* Description */}
         <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
       </div>
 

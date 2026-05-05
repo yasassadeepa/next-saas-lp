@@ -4,6 +4,8 @@ import Features1 from "@/sections/features-1";
 import Features2 from "@/sections/features-2";
 import Features3 from "@/sections/features-3";
 import Features4 from "@/sections/features-4";
+import FeaturesAutomation from "@/sections/features-automation";
+import FeaturesBattlePlan from "@/sections/features-battleplan";
 import FeaturesLeads from "@/sections/features-leads";
 import Footer from "@/sections/footer";
 import Hero from "@/sections/hero";
@@ -19,6 +21,8 @@ export default function HomePage() {
       <Features3 />
       <Features4 />
       <FeaturesLeads />
+      <FeaturesAutomation />
+      <FeaturesBattlePlan />
       <Testimonials />
       <Pricing />
       <FAQ />
