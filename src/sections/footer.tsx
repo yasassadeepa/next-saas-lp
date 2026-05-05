@@ -2,6 +2,7 @@
 
 import { Facebook, Github, Instagram, Youtube } from "lucide-react"
 import Link from "next/link"
+import Logo from "@/components/logo"
 
 const settings = {
   links: [
@@ -22,7 +23,12 @@ const settings = {
 
 export default function Footer() {
   return (
-    <footer className="w-full py-8 md:py-16 flex flex-col items-center justify-center gap-7 md:gap-10 text-sm border-t border-slate-100 text-muted">
+    <footer className="w-full py-8 md:py-16 flex flex-col items-center justify-center gap-7 md:gap-10 text-sm border-t border-slate-100 text-muted overflow-hidden">
+      {/* Brand Logo */}
+      <Link href="/" className="hover:opacity-80 transition-opacity">
+        <Logo className="scale-125" />
+      </Link>
+
       {/* Nav Links */}
       <div className="flex flex-wrap md:flex-row items-center justify-center gap-7 md:gap-10 font-medium text-slate-600">
         {settings.links.map(link => (
@@ -37,8 +43,17 @@ export default function Footer() {
         ))}
       </div>
 
+      {/* Large Brand Mark (Landscape View) */}
+      <div className="w-full relative mt-4 md:mt-8 select-none pointer-events-none opacity-[0.03] md:opacity-[0.05]">
+        <h2 className="text-[8vw] font-black text-center tracking-tighter leading-none whitespace-nowrap uppercase">
+          Closer Intellect
+        </h2>
+      </div>
+
       {/* copyright */}
-      <p className="text-center text-xs opacity-60">{settings.copyright}</p>
+      <div className="flex flex-col items-center gap-2">
+        <p className="text-center text-xs opacity-60">{settings.copyright}</p>
+      </div>
     </footer>
   )
 }
