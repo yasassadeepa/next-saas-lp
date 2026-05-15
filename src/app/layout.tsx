@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://closerintellect.com"),
+  metadataBase: new URL("https://closerintellect.ai"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://closerintellect.com",
+    url: "https://closerintellect.ai",
     siteName: "Closer Intellect AI",
     title: "Closer Intellect AI | AI Sales Enablement & Automation",
     description: "Automate your sales outreach with AI Voice, SMS, and Lead Management. The ultimate 'Second Brain' for your sales team.",

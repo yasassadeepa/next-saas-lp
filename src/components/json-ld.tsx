@@ -5,8 +5,8 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Closer Intellect AI",
-    "url": "https://closerintellect.com",
-    "logo": "https://closerintellect.com/favicon.ico",
+    "url": "https://closerintellect.ai",
+    "logo": "https://closerintellect.ai/favicon.ico",
     "sameAs": [
       "https://twitter.com/closerintellect",
       "https://linkedin.com/company/closerintellect"
