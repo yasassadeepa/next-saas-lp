@@ -16,7 +16,7 @@ const settings = {
   card_1: {
     title: 'Smart Strike Dashboard',
     content: 'A high-intensity interface designed for speed. Track leads, sequences, and conversion metrics in one view.',
-    image: '/hero-safari.png' // Reusing hero UI for context
+    image: '/smart-strike.png' // Reusing hero UI for context
   },
   card_2: {
     title: 'Live Sales Coaching',
