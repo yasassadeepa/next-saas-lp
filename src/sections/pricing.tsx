@@ -10,50 +10,49 @@ const settings = {
   title: 'Simple, Transparent Pricing',
   description: 'Choose the plan that fits your agency size. All plans include our core AI Second Brain and Live Coaching features.',
   plan_1: {
-    planName: 'Starter',
-    price: 99,
+    planName: 'Starter Closer',
+    price: 197,
     currency: '$',
     description: 'Perfect for solo closers and small teams getting started.',
     cta: 'Start Scaling Now',
     features: [
-      'Up to 3 Users',
-      'AI Voice & SMS Sequences',
-      'Basic Second Brain',
-      'Smart Strike Dashboard',
-      'Standard CRM Sync',
-      'Email Support'
+      '1 User Seat',
+      'Unlimited Lead Generations',
+      'Usage Billing',
+      'All Core features',
+      '24/7 Support'
     ]
   },
   plan_2: {
-    planName: 'Professional',
-    price: 299,
+    planName: 'Growth Agency',
+    price: 397,
     currency: '$',
     description: 'For growing agencies that need high-intensity sales tools.',
-    cta: 'Go Professional',
+    cta: 'Scale Your Agency',
     features: [
-      'Up to 10 Users',
-      'Advanced Second Brain',
-      'Live Sales Coaching',
-      'Lead Marketplace Access',
-      'Automated Contracts',
-      'Priority Support',
-      'Custom CRM Integrations'
+      'Unlimited Seats',
+      'Everything in Starter Closer Package',
+      'Usage Billing with minimum rates',
+      'Admin Reports with AI features',
+      'Agency Goals and Gamification',
+      'API Access'
     ]
   },
   plan_3: {
-    planName: 'Enterprise',
-    price: 999,
+    planName: 'Enterprise White-Label',
+    price: 797,
     currency: '$',
+    secondaryPrice: 'or $9,999 one time',
     description: 'For large sales organizations with complex needs.',
     cta: 'Contact Sales',
     features: [
-      'Unlimited Users',
-      'Custom AI Training',
+      'Everything in Growth Agency',
+      'Full White-Labeling & Branding',
+      'Custom Domain Support',
+      'Custom AI Training & Models',
       'Dedicated Account Manager',
-      'On-premise Options',
       'SAML/SSO Integration',
-      '24/7 Premium Support',
-      'White-glove Onboarding'
+      '24/7 Premium Support'
     ]
   },
 }
@@ -128,9 +127,12 @@ export default function Pricing() {
         <SlideEffect isSpring={false} delay={0.3} className="flex flex-col gap-6 text-base">
           <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
             <div className="text-start text-white font-bold text-lg">{settings.plan_3.planName}</div>
-            <div className="flex items-baseline gap-1 my-4">
-              <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
-              <span className="text-muted text-sm">/month</span>
+            <div className="flex flex-col items-start gap-1 my-4">
+              <div className="flex items-baseline gap-1">
+                <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
+                <span className="text-muted text-sm">/month</span>
+              </div>
+              <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
             </div>
             <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
             <div className="text-start space-y-6">
