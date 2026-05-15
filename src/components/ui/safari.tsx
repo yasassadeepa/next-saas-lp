@@ -79,7 +79,7 @@ export function Safari({
         >
           <Image
             src={imageSrc}
-            alt=""
+            alt="Closer Intellect AI Dashboard Preview"
             width={SCREEN_WIDTH}
             height={SCREEN_HEIGHT}
             className="block size-full object-fill object-top"

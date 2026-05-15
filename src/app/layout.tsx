@@ -33,13 +33,19 @@ export const metadata: Metadata = {
     url: "https://closerintellect.com",
     siteName: "Closer Intellect AI",
     title: "Closer Intellect AI | AI Sales Enablement & Automation",
-    description: "Automate your sales outreach with AI Voice, SMS, and Lead Management.",
+    description: "Automate your sales outreach with AI Voice, SMS, and Lead Management. The ultimate 'Second Brain' for your sales team.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Closer Intellect AI Dashboard Preview",
+        alt: "Closer Intellect AI - AI Sales Enablement & Automation",
+      },
+      {
+        url: "/full_logo.png",
+        width: 800,
+        height: 800,
+        alt: "Closer Intellect AI Logo",
       },
     ],
   },
