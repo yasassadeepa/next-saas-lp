@@ -10,6 +10,7 @@ import FeaturesLeads from "@/sections/features-leads";
 import Footer from "@/sections/footer";
 import Hero from "@/sections/hero";
 import Pricing from "@/sections/pricing";
+import CoreFeatures from "@/sections/core-features";
 import Testimonials from "@/sections/testimonials";
 
 export default function HomePage() {
@@ -25,6 +26,7 @@ export default function HomePage() {
       <FeaturesBattlePlan />
       <Testimonials />
       <Pricing />
+      <CoreFeatures />
       <FAQ />
       <CTA />
       <Footer />
