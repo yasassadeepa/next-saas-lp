@@ -9,8 +9,8 @@ const settings = {
   title: 'Ready to Scale Your Sales Team?',
   description: 'Join hundreds of top-performing agencies using Closer Intellect AI to eliminate friction and close more deals.',
   CTA: {
-    content: 'Start Your 14-Day Free Trial',
-    href: '#'
+    content: 'Try Now',
+    href: '#pricing'
   }
 }
 
