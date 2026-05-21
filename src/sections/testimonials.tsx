@@ -47,7 +47,7 @@ export default function Testimonials() {
         {settings.quotes.map((item, index) => (
           <SlideEffect key={index} direction={index === 0 ? 'right' : 'left'} delay={index * 0.2} className="relative group h-full">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-transparent rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-            <div className="relative h-full flex flex-col items-center justify-between p-8 md:p-12 rounded-3xl bg-secondary/40 border border-border/50 hover:border-primary/30 transition-all duration-300">
+            <div className="relative h-full flex flex-col items-center justify-between p-6 md:p-12 rounded-3xl bg-secondary/40 border border-border/50 hover:border-primary/30 transition-all duration-300">
               <Quote className="text-primary/40 mb-6" size={48} />
               
               <p className="text-lg md:text-xl text-white font-medium leading-relaxed italic mb-8">

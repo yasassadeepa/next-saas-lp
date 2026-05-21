@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import Badge from "@/components/badge"
 import { MagicCard } from "@/components/ui/magic-card"
 import SlideEffect from "@/components/slide-effect"
@@ -83,7 +83,32 @@ const IntegrationAnimation = ({ icon1: Icon1, icon2: Icon2, icon3: Icon3 }: { ic
   )
 }
 
+
 export default function Features3() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = container.offsetWidth * 0.85 + 16; // 85vw + gap
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(Math.min(index, 2));
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const cards = [
+    { settings: settings.card_1, icons: [Users, Zap, ShieldCheck] },
+    { settings: settings.card_2, icons: [FileText, Zap, Signature] },
+    { settings: settings.card_3, icons: [Phone, Zap, Database] },
+  ];
+
   return (
     <div className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center">
       {/* Badge */}
@@ -99,9 +124,9 @@ export default function Features3() {
       {/* Description */}
       <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* card 1 */}
+      {/* Cards — Carousel on mobile, Grid on desktop */}
+      {/* Desktop Grid */}
+      <div className="hidden lg:grid lg:grid-cols-3 gap-6">
         <SlideEffect direction="top" className="col-span-1 h-full" isSpring={false}>
           <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
@@ -112,7 +137,6 @@ export default function Features3() {
           </MagicCard>
         </SlideEffect>
 
-        {/* card 2 */}
         <SlideEffect direction="top" delay={0.2} className="col-span-1 h-full" isSpring={false}>
           <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
@@ -123,7 +147,6 @@ export default function Features3() {
           </MagicCard>
         </SlideEffect>
 
-        {/* card 3 */}
         <SlideEffect direction="top" delay={0.3} className="col-span-1 h-full" isSpring={false}>
           <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 md:p-10 border-border bg-secondary/50">
             <div className="mb-8">
@@ -134,6 +157,51 @@ export default function Features3() {
           </MagicCard>
         </SlideEffect>
       </div>
+
+      {/* Mobile Carousel */}
+      <div className="lg:hidden">
+        <SlideEffect>
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-4 px-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+          >
+            {cards.map((card, index) => (
+              <div key={index} className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
+                <MagicCard mode="orb" glowFrom="#dc2626" glowTo="#7f1d1d" glowOpacity={0.2} className="flex flex-col items-center text-center h-full p-8 border-border bg-secondary/50">
+                  <div className="mb-8">
+                    <h3 className="text-xl text-white font-bold">{card.settings.title}</h3>
+                    <p className="text-muted">{card.settings.content}</p>
+                  </div>
+                  <IntegrationAnimation icon1={card.icons[0]} icon2={card.icons[1]} icon3={card.icons[2]} />
+                </MagicCard>
+              </div>
+            ))}
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {cards.map((_, index) => (
+              <button
+                key={index}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeIndex === index
+                    ? 'w-6 bg-primary'
+                    : 'w-1.5 bg-zinc-600'
+                }`}
+                onClick={() => {
+                  const container = scrollRef.current;
+                  if (!container) return;
+                  const cardWidth = container.offsetWidth * 0.85 + 16;
+                  container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                }}
+                aria-label={`Go to card ${index + 1}`}
+              />
+            ))}
+          </div>
+        </SlideEffect>
+      </div>
     </div>
   )
-}
+}
+

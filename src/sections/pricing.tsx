@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef, useState, useEffect } from "react"
 import Card from "@/components/card"
 import SlideEffect from "@/components/slide-effect"
 import { Button } from "@/components/ui/button"
@@ -58,6 +59,42 @@ const settings = {
 }
 
 export default function Pricing() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(1); // Start on "most popular"
+
+  useEffect(() => {
+    // Auto-scroll to the "most popular" card (index 1) on mount
+    const container = scrollRef.current;
+    if (!container) return;
+    const timer = setTimeout(() => {
+      const cardWidth = container.offsetWidth * 0.85 + 16;
+      container.scrollTo({ left: cardWidth * 1, behavior: 'smooth' });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const cardWidth = container.offsetWidth * 0.85 + 16;
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(Math.min(index, 2));
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToCard = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const cardWidth = container.offsetWidth * 0.85 + 16;
+    container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+  };
+
   return (
     <div id='pricing' className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 mx-auto text-center">
       {/* Title */}
@@ -68,8 +105,8 @@ export default function Pricing() {
       {/* Description */}
       <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
 
-      {/* Pricing Plans */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Desktop Grid */}
+      <div className="hidden lg:grid lg:grid-cols-3 gap-6">
         {/* plan 1 */}
         <SlideEffect isSpring={false} delay={0.1} className="text-base">
           <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
@@ -81,7 +118,6 @@ export default function Pricing() {
             <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_1.cta}</Button>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_1.description}</p>
-
               <div className="flex flex-col items-start gap-4 text-sm">
                 {settings.plan_1.features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -109,7 +145,6 @@ export default function Pricing() {
               <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
               <div className="text-start space-y-6">
                 <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
-   
                 <div className="flex flex-col items-start gap-4 text-sm">
                   {settings.plan_2.features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -137,7 +172,6 @@ export default function Pricing() {
             <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_3.description}</p>
-
               <div className="flex flex-col items-start gap-4 text-sm">
                 {settings.plan_3.features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
@@ -148,6 +182,108 @@ export default function Pricing() {
               </div>
             </div>
           </Card>
+        </SlideEffect>
+      </div>
+
+      {/* Mobile Carousel */}
+      <div className="lg:hidden">
+        <SlideEffect>
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2 -mx-4 px-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+          >
+            {/* Plan 1 */}
+            <div className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
+              <Card className="bg-secondary shadow-soft border-border">
+                <div className="text-start text-white font-bold text-lg">{settings.plan_1.planName}</div>
+                <div className="flex items-baseline gap-1 my-4">
+                  <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
+                  <span className="text-muted text-sm">/month</span>
+                </div>
+                <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_1.cta}</Button>
+                <div className="text-start space-y-6">
+                  <p className="text-muted text-sm leading-relaxed">{settings.plan_1.description}</p>
+                  <div className="flex flex-col items-start gap-4 text-sm">
+                    {settings.plan_1.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CircleCheck className="text-primary" size={16} />
+                        <span className="text-zinc-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Plan 2 — Most Popular */}
+            <div className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
+              <Card className="!bg-[#0a0a0a] border-primary/50 shadow-2xl shadow-primary/20">
+                <div className="w-full flex items-center gap-2 justify-between">
+                  <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
+                  <div className="text-[10px] bg-primary px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
+                </div>
+                <div className="flex items-baseline gap-1 my-4">
+                  <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
+                  <span className="text-slate-400 text-sm">/month</span>
+                </div>
+                <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
+                <div className="text-start space-y-6">
+                  <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
+                  <div className="flex flex-col items-start gap-4 text-sm">
+                    {settings.plan_2.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CircleCheck className="text-primary" size={16} />
+                        <span className="text-slate-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Plan 3 */}
+            <div className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
+              <Card className="bg-secondary shadow-soft border-border">
+                <div className="text-start text-white font-bold text-lg">{settings.plan_3.planName}</div>
+                <div className="flex flex-col items-start gap-1 my-4">
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
+                    <span className="text-muted text-sm">/month</span>
+                  </div>
+                  <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
+                </div>
+                <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
+                <div className="text-start space-y-6">
+                  <p className="text-muted text-sm leading-relaxed">{settings.plan_3.description}</p>
+                  <div className="flex flex-col items-start gap-4 text-sm">
+                    {settings.plan_3.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        <CircleCheck className="text-primary" size={16} />
+                        <span className="text-zinc-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeIndex === index
+                    ? 'w-6 bg-primary'
+                    : 'w-1.5 bg-zinc-600'
+                }`}
+                onClick={() => scrollToCard(index)}
+                aria-label={`Go to plan ${index + 1}`}
+              />
+            ))}
+          </div>
         </SlideEffect>
       </div>
     </div>

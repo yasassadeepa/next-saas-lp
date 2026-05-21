@@ -12,18 +12,22 @@ import Hero from "@/sections/hero";
 import Pricing from "@/sections/pricing";
 import CoreFeatures from "@/sections/core-features";
 import Testimonials from "@/sections/testimonials";
+import MobileFeaturePreview from "@/sections/mobile-feature-preview";
 
 export default function HomePage() {
   return (
-    <div className="px-4 xl:px-0 max-w-7xl mx-auto space-y-20 sm:space-y-24 md:space-y-32 lg:space-y-40 scroll-smooth">
+    <div className="px-4 xl:px-0 max-w-7xl mx-auto space-y-14 sm:space-y-24 md:space-y-32 lg:space-y-40 scroll-smooth">
       <Hero />
       <Features1 />
       <Features2 />
       <Features3 />
       <Features4 />
-      <FeaturesLeads />
-      <FeaturesAutomation />
-      <FeaturesBattlePlan />
+      <MobileFeaturePreview />
+      <div className="hidden lg:contents">
+        <FeaturesLeads />
+        <FeaturesAutomation />
+        <FeaturesBattlePlan />
+      </div>
       <Testimonials />
       <Pricing />
       <CoreFeatures />

@@ -67,7 +67,7 @@ const settings = {
 
 export default function Hero() {
   return (
-    <div className="space-y-12 md:space-y-20 lg:space-y-28 z-50 relative">
+    <div className="space-y-8 md:space-y-20 lg:space-y-28 z-50 relative">
       <Navbar />
 
       <section className="flex flex-col gap-8 lg:gap-11 items-center text-center">

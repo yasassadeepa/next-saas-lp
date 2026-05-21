@@ -55,7 +55,7 @@ export default function Features1() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* card 1 */}
         <SlideEffect direction="right" className="col-span-1 lg:col-span-3 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border flex flex-col items-center justify-between text-center py-10 min-h-[350px]">
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border flex flex-col items-center justify-between text-center py-10 min-h-0 lg:min-h-[350px]">
             <div className="space-y-3">
               <h3 className="text-xl md:text-title text-white font-bold">{settings.card_1.title}</h3>
               <p className="max-w-md mx-auto text-muted">{settings.card_1.content}</p>
@@ -70,7 +70,7 @@ export default function Features1() {
 
         {/* card 2 */}
         <SlideEffect direction="left" duration={1.3} className="col-span-1 lg:col-span-2 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border relative overflow-hidden flex flex-col justify-between py-10 min-h-[350px]">
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border relative overflow-hidden flex flex-col justify-between py-10 min-h-0 lg:min-h-[350px]">
             <div className="space-y-3">
               <h3 className="text-xl md:text-title text-white font-bold">{settings.card_2.title}</h3>
               <p className="text-muted">{settings.card_2.content}</p>
@@ -84,7 +84,7 @@ export default function Features1() {
 
         {/* card 3 */}
         <SlideEffect direction="right" duration={1} className="col-span-1 lg:col-span-2 h-full" isSpring={false}>
-          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border relative overflow-hidden flex flex-col justify-between py-10 min-h-[350px]">
+          <Card className="shadow-soft hover:shadow-xl transition-shadow border-border relative overflow-hidden flex flex-col justify-between py-10 min-h-0 lg:min-h-[350px]">
             <div className="absolute inset-0 z-0 bg-secondary/50">
               <AnimatedGradient colors={["#dc2626", "#991b1b", "#7f1d1d", "#450a0a"]} speed={5} blur="heavy" />
             </div>
