@@ -15,6 +15,7 @@ const settings = {
     { name: 'pricing', href: '#pricing' },
     { name: 'leadership', href: '#leadership' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Docs', href: 'https://docs.closerintellect.ai' },
   ],
   cta: {
     content: 'Get Started',

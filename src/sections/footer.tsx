@@ -11,6 +11,7 @@ const settings = {
     { title: 'Pricing', href: '#pricing' },
     { title: 'Leadership', href: '#leadership' },
     { title: 'FAQ', href: '#faq' },
+    { title: 'Docs', href: 'https://docs.closerintellect.ai' },
   ],
   socialMedia: [
     { title: 'Facebook', icon: Facebook, href: '/' },
