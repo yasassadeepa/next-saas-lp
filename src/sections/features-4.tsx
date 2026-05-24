@@ -20,7 +20,7 @@ const settings = {
     content: "Sales happens in teams. Closer Intellect AI enables collaboration by allowing you to easily manage lead distribution, team performance, and agency-wide sequences in one place.",
     CTA: {
       content: 'Invite Your Team',
-      href: '#'
+      href: 'https://app.closerintellect.ai'
     },
     labels: [
       'high-ticket',

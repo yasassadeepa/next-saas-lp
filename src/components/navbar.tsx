@@ -18,7 +18,7 @@ const settings = {
   ],
   cta: {
     content: 'Get Started',
-    href: '#'
+    href: 'https://app.closerintellect.ai'
   }
 }
 

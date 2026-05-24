@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import SlideEffect from "@/components/slide-effect";
 import TextBlurEffect from "@/components/text-blur-effect";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Play } from "lucide-react";
 import Link from "next/link";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Safari } from "@/components/ui/safari";
@@ -16,14 +16,14 @@ const settings = {
   subheadline: 'Closer Intellect AI is the high-velocity Sales Enablement Platform. Scale outreach with AI Voice & SMS while providing a "Second Brain" for live intelligence.',
   mainCTA: {
     content: 'Start Scaling Now',
-    href: '#'
+    href: 'https://app.closerintellect.ai'
   },
   settings: {
     url: 'https://closerintellect.ai',
   },
   secondaryCTA: {
     content: 'Watch Demo',
-    href: '#'
+    href: '#demo'
   },
   illustration: '/hero-safari.png',
   reviews: [
@@ -148,7 +148,7 @@ export default function Hero() {
 
         {/* Illustration */}
         <SlideEffect className="relative w-full max-w-7xl mx-auto" isSpring={false} duration={1.3}>
-          <div className="shadow-2xl rounded-[20px] overflow-hidden relative">
+          <div id="demo" className="shadow-2xl rounded-[20px] overflow-hidden relative scroll-m-24">
             <Safari 
               url={settings.settings.url} 
               imageSrc={settings.illustration} 

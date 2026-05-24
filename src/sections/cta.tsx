@@ -10,7 +10,7 @@ const settings = {
   description: 'Join hundreds of top-performing agencies using Closer Intellect AI to eliminate friction and close more deals.',
   CTA: {
     content: 'Try Now',
-    href: '#pricing'
+    href: 'https://app.closerintellect.ai'
   }
 }
 

@@ -6,6 +6,7 @@ import SlideEffect from "@/components/slide-effect"
 import { Button } from "@/components/ui/button"
 import { CircleCheck } from "lucide-react"
 import { GlareHover } from "@/components/ui/glare-hover"
+import Link from "next/link"
 
 const settings = {
   title: 'Simple, Transparent Pricing',
@@ -16,6 +17,7 @@ const settings = {
     currency: '$',
     description: 'Perfect for solo closers and small teams getting started.',
     cta: 'Start Scaling Now',
+    href: 'https://app.closerintellect.ai',
     features: [
       '1 User Seat',
       'Unlimited Lead Generations',
@@ -30,6 +32,7 @@ const settings = {
     currency: '$',
     description: 'For growing agencies that need high-intensity sales tools.',
     cta: 'Scale Your Agency',
+    href: 'https://app.closerintellect.ai',
     features: [
       'Unlimited Seats',
       'Everything in Starter Closer Package',
@@ -46,6 +49,7 @@ const settings = {
     secondaryPrice: 'or $9,999 one time',
     description: 'For large sales organizations with complex needs.',
     cta: 'Contact Sales',
+    href: 'mailto:sales@closerintellect.ai',
     features: [
       'Everything in Growth Agency',
       'Full White-Labeling & Branding',
@@ -115,7 +119,9 @@ export default function Pricing() {
               <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
               <span className="text-muted text-sm">/month</span>
             </div>
-            <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_1.cta}</Button>
+            <Link href={settings.plan_1.href} className="block w-full mb-6">
+              <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_1.cta}</Button>
+            </Link>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_1.description}</p>
               <div className="flex flex-col items-start gap-4 text-sm">
@@ -142,7 +148,9 @@ export default function Pricing() {
                 <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
                 <span className="text-slate-400 text-sm">/month</span>
               </div>
-              <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
+              <Link href={settings.plan_2.href} className="block w-full mb-6">
+                <Button className="w-full btn-gradient border-none h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
+              </Link>
               <div className="text-start space-y-6">
                 <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
                 <div className="flex flex-col items-start gap-4 text-sm">
@@ -169,7 +177,9 @@ export default function Pricing() {
               </div>
               <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
             </div>
-            <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
+            <Link href={settings.plan_3.href} className="block w-full mb-6">
+              <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_3.cta}</Button>
+            </Link>
             <div className="text-start space-y-6">
               <p className="text-muted text-sm leading-relaxed">{settings.plan_3.description}</p>
               <div className="flex flex-col items-start gap-4 text-sm">
@@ -201,7 +211,9 @@ export default function Pricing() {
                   <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
                   <span className="text-muted text-sm">/month</span>
                 </div>
-                <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_1.cta}</Button>
+                <Link href={settings.plan_1.href} className="block w-full mb-6">
+                  <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_1.cta}</Button>
+                </Link>
                 <div className="text-start space-y-6">
                   <p className="text-muted text-sm leading-relaxed">{settings.plan_1.description}</p>
                   <div className="flex flex-col items-start gap-4 text-sm">
@@ -227,7 +239,9 @@ export default function Pricing() {
                   <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
                   <span className="text-slate-400 text-sm">/month</span>
                 </div>
-                <Button className="w-full btn-gradient border-none mb-6 h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
+                <Link href={settings.plan_2.href} className="block w-full mb-6">
+                  <Button className="w-full btn-gradient border-none h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
+                </Link>
                 <div className="text-start space-y-6">
                   <p className="text-slate-400 text-sm leading-relaxed">{settings.plan_2.description}</p>
                   <div className="flex flex-col items-start gap-4 text-sm">
@@ -253,7 +267,9 @@ export default function Pricing() {
                   </div>
                   <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
                 </div>
-                <Button className="w-full border-border text-white hover:bg-background mb-6" variant='outline'>{settings.plan_3.cta}</Button>
+                <Link href={settings.plan_3.href} className="block w-full mb-6">
+                  <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_3.cta}</Button>
+                </Link>
                 <div className="text-start space-y-6">
                   <p className="text-muted text-sm leading-relaxed">{settings.plan_3.description}</p>
                   <div className="flex flex-col items-start gap-4 text-sm">
