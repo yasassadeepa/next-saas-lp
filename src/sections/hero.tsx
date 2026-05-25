@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import SlideEffect from "@/components/slide-effect";
 import TextBlurEffect from "@/components/text-blur-effect";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Play } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Safari } from "@/components/ui/safari";

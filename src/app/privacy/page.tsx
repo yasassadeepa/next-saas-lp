@@ -5,7 +5,7 @@ export default function PrivacyPage() {
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Privacy Policy</h1>
         <p className="font-medium text-foreground"><strong>Last Updated:</strong> May 25, 2026</p>
 
-        <p>At Closer Intellect AI ("we," "us," or "our"), we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our lead generation, campaign management, and AI orchestration platform.</p>
+        <p>At Closer Intellect AI (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our lead generation, campaign management, and AI orchestration platform.</p>
 
         <h2 className="text-2xl font-semibold text-foreground mt-8">1. Information We Collect</h2>
         <p>We may collect the following types of information:</p>
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
         <ul className="list-disc pl-6 space-y-2">
           <li><strong>Service Delivery:</strong> To provide, maintain, and improve our Platform, including our AI models, lead enrichment (via Apollo), and live translation features.</li>
           <li><strong>Account Management:</strong> To manage your account, subscription, and billing.</li>
-          <li><strong>Personalization:</strong> To tailor the "Second Brain Engine" and AI coaching to provide better battle plans and memory triggers.</li>
+          <li><strong>Personalization:</strong> To tailor the &quot;Second Brain Engine&quot; and AI coaching to provide better battle plans and memory triggers.</li>
           <li><strong>Communication:</strong> To send administrative notices, updates, and customer support messages.</li>
           <li><strong>Security:</strong> To monitor for suspicious activities and enforce our Terms and Conditions.</li>
         </ul>
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
         <p>Our AI voice features involve calling and recording conversations. By using these features, you represent and warrant that you have obtained all necessary consents from call recipients as required by applicable laws (such as two-party consent laws) before initiating or recording any communications.</p>
 
         <h2 className="text-2xl font-semibold text-foreground mt-8">7. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on the Platform and updating the "Last Updated" date.</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on the Platform and updating the &quot;Last Updated&quot; date.</p>
 
         <h2 className="text-2xl font-semibold text-foreground mt-8">8. Contact Us</h2>
         <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us.</p>

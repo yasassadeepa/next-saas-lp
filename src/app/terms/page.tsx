@@ -5,7 +5,7 @@ export default function TermsPage() {
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Terms and Conditions</h1>
         <p className="font-medium text-foreground"><strong>Last Updated:</strong> May 25, 2026</p>
 
-        <p>Welcome to Closer Intellect AI ("Platform", "we", "our", or "us"). By accessing or using our platform, which provides lead generation, campaign management, and sales team orchestration utilizing AI models and data providers, you agree to be bound by these Terms and Conditions ("Terms").</p>
+        <p>Welcome to Closer Intellect AI (&quot;Platform&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;). By accessing or using our platform, which provides lead generation, campaign management, and sales team orchestration utilizing AI models and data providers, you agree to be bound by these Terms and Conditions (&quot;Terms&quot;).</p>
 
         <p>If you do not agree to all the terms and conditions of this agreement, you may not access the Platform or use any of its services.</p>
 
