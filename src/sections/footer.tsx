@@ -51,8 +51,13 @@ export default function Footer() {
         </h2>
       </div>
 
-      {/* copyright */}
-      <div className="flex flex-col items-center gap-2">
+      {/* copyright and legal links */}
+      <div className="flex flex-col items-center gap-4 mt-8 md:mt-12">
+        <div className="flex gap-4 text-xs opacity-60 hover:opacity-100 transition-opacity">
+          <Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+          <span>|</span>
+          <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+        </div>
         <p className="text-center text-xs opacity-60">{settings.copyright}</p>
       </div>
     </footer>
