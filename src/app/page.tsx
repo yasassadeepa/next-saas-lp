@@ -13,6 +13,7 @@ import Pricing from "@/sections/pricing";
 import CoreFeatures from "@/sections/core-features";
 import Testimonials from "@/sections/testimonials";
 import MobileFeaturePreview from "@/sections/mobile-feature-preview";
+import ScrollPopup from "@/components/scroll-popup";
 
 export default function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function HomePage() {
       <FAQ />
       <CTA />
       <Footer />
+      <ScrollPopup />
     </div>
   )
 }
