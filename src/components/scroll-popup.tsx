@@ -19,12 +19,11 @@ export default function ScrollPopup() {
       return;
     }
 
-    let timer: NodeJS.Timeout;
     let hasScrolled = false;
     let timePassed = false;
     
     // Start a 30 second timer on mount
-    timer = setTimeout(() => {
+    const timer: NodeJS.Timeout = setTimeout(() => {
       timePassed = true;
       // If 30 seconds have passed AND they have scrolled, show it
       if (hasScrolled) {

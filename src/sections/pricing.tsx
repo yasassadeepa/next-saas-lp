@@ -14,6 +14,7 @@ const settings = {
   plan_1: {
     planName: 'Starter Closer',
     price: 197,
+    onboardingFee: 150,
     currency: '$',
     description: 'Perfect for solo closers and small teams getting started.',
     cta: 'Start Scaling Now',
@@ -29,6 +30,7 @@ const settings = {
   plan_2: {
     planName: 'Growth Agency',
     price: 397,
+    onboardingFee: 250,
     currency: '$',
     description: 'For growing agencies that need high-intensity sales tools.',
     cta: 'Scale Your Agency',
@@ -45,6 +47,7 @@ const settings = {
   plan_3: {
     planName: 'Enterprise White-Label',
     price: 797,
+    onboardingFee: 1250,
     currency: '$',
     secondaryPrice: 'or $9,999 one time',
     description: 'For large sales organizations with complex needs.',
@@ -60,6 +63,45 @@ const settings = {
       '24/7 Premium Support'
     ]
   },
+}
+
+type PlanPriceProps = {
+  plan: {
+    price: number
+    onboardingFee: number
+    currency: string
+    secondaryPrice?: string
+  }
+  mutedClassName?: string
+}
+
+function PlanPrice({ plan, mutedClassName = 'text-muted' }: PlanPriceProps) {
+  const formatAmount = (amount: number) => amount.toLocaleString('en-US')
+  const firstPayment = plan.price + plan.onboardingFee
+
+  return (
+    <div className="my-4 flex w-full flex-col items-start gap-2">
+      <div className="flex items-baseline gap-1">
+        <span className="font-bold text-4xl text-white">
+          {plan.currency}{formatAmount(plan.price)}
+        </span>
+        <span className={`${mutedClassName} text-sm`}>/month</span>
+      </div>
+      {plan.secondaryPrice && (
+        <span className={`${mutedClassName} text-xs font-medium uppercase tracking-wider`}>
+          {plan.secondaryPrice}
+        </span>
+      )}
+      <div className="w-full rounded-xl border border-primary/25 bg-primary/5 px-3 py-2.5">
+        <p className="text-sm font-semibold text-zinc-200">
+          + {plan.currency}{formatAmount(plan.onboardingFee)} one-time onboarding fee
+        </p>
+        <p className={`${mutedClassName} mt-1 text-xs leading-relaxed`}>
+          First monthly-plan payment: {plan.currency}{formatAmount(firstPayment)}. Then {plan.currency}{formatAmount(plan.price)}/month.
+        </p>
+      </div>
+    </div>
+  )
 }
 
 export default function Pricing() {
@@ -107,7 +149,12 @@ export default function Pricing() {
       </SlideEffect>
 
       {/* Description */}
-      <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">{settings.description}</SlideEffect>
+      <SlideEffect className="px-2 sm:px-10 md:px-0 w-full md:max-w-3/4 mx-auto text-muted text-sm lg:text-lg">
+        <p>{settings.description}</p>
+        <p className="mt-2 text-xs sm:text-sm">
+          Monthly plans include a one-time onboarding fee in the first payment only.
+        </p>
+      </SlideEffect>
 
       {/* Desktop Grid */}
       <div className="hidden lg:grid lg:grid-cols-3 gap-6">
@@ -115,10 +162,7 @@ export default function Pricing() {
         <SlideEffect isSpring={false} delay={0.1} className="text-base">
           <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
             <div className="text-start text-white font-bold text-lg">{settings.plan_1.planName}</div>
-            <div className="flex items-baseline gap-1 my-4">
-              <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
-              <span className="text-muted text-sm">/month</span>
-            </div>
+            <PlanPrice plan={settings.plan_1} />
             <Link href={settings.plan_1.href} className="block w-full mb-6">
               <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_1.cta}</Button>
             </Link>
@@ -144,10 +188,7 @@ export default function Pricing() {
                 <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
                 <div className="text-[10px] bg-primary px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
               </div>
-              <div className="flex items-baseline gap-1 my-4">
-                <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
-                <span className="text-slate-400 text-sm">/month</span>
-              </div>
+              <PlanPrice plan={settings.plan_2} mutedClassName="text-slate-400" />
               <Link href={settings.plan_2.href} className="block w-full mb-6">
                 <Button className="w-full btn-gradient border-none h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
               </Link>
@@ -170,13 +211,7 @@ export default function Pricing() {
         <SlideEffect isSpring={false} delay={0.3} className="flex flex-col gap-6 text-base">
           <Card className="bg-secondary shadow-soft border-border hover:shadow-xl transition-shadow">
             <div className="text-start text-white font-bold text-lg">{settings.plan_3.planName}</div>
-            <div className="flex flex-col items-start gap-1 my-4">
-              <div className="flex items-baseline gap-1">
-                <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
-                <span className="text-muted text-sm">/month</span>
-              </div>
-              <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
-            </div>
+            <PlanPrice plan={settings.plan_3} />
             <Link href={settings.plan_3.href} className="block w-full mb-6">
               <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_3.cta}</Button>
             </Link>
@@ -207,10 +242,7 @@ export default function Pricing() {
             <div className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
               <Card className="bg-secondary shadow-soft border-border">
                 <div className="text-start text-white font-bold text-lg">{settings.plan_1.planName}</div>
-                <div className="flex items-baseline gap-1 my-4">
-                  <span className="font-bold text-4xl text-white">{settings.plan_1.currency}{settings.plan_1.price}</span>
-                  <span className="text-muted text-sm">/month</span>
-                </div>
+                <PlanPrice plan={settings.plan_1} />
                 <Link href={settings.plan_1.href} className="block w-full mb-6">
                   <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_1.cta}</Button>
                 </Link>
@@ -235,10 +267,7 @@ export default function Pricing() {
                   <div className="text-start text-white font-bold text-lg">{settings.plan_2.planName}</div>
                   <div className="text-[10px] bg-primary px-2 py-1 rounded-full text-white uppercase font-bold tracking-wider">most popular</div>
                 </div>
-                <div className="flex items-baseline gap-1 my-4">
-                  <span className="font-bold text-4xl text-white">{settings.plan_2.currency}{settings.plan_2.price}</span>
-                  <span className="text-slate-400 text-sm">/month</span>
-                </div>
+                <PlanPrice plan={settings.plan_2} mutedClassName="text-slate-400" />
                 <Link href={settings.plan_2.href} className="block w-full mb-6">
                   <Button className="w-full btn-gradient border-none h-12 text-base font-bold shadow-lg shadow-primary/20">{settings.plan_2.cta}</Button>
                 </Link>
@@ -260,13 +289,7 @@ export default function Pricing() {
             <div className="min-w-[85vw] max-w-[85vw] snap-center flex-shrink-0">
               <Card className="bg-secondary shadow-soft border-border">
                 <div className="text-start text-white font-bold text-lg">{settings.plan_3.planName}</div>
-                <div className="flex flex-col items-start gap-1 my-4">
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-bold text-4xl text-white">{settings.plan_3.currency}{settings.plan_3.price}</span>
-                    <span className="text-muted text-sm">/month</span>
-                  </div>
-                  <span className="text-muted text-xs font-medium uppercase tracking-wider">{settings.plan_3.secondaryPrice}</span>
-                </div>
+                <PlanPrice plan={settings.plan_3} />
                 <Link href={settings.plan_3.href} className="block w-full mb-6">
                   <Button className="w-full border-border text-white hover:bg-background" variant='outline'>{settings.plan_3.cta}</Button>
                 </Link>

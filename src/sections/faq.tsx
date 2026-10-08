@@ -27,6 +27,10 @@ const settings = {
       question: 'How does live coaching feedback work?',
       answer: 'During a live call, the AI analyzes the transcript in real-time and provides discreet tactical guidance, objection handling, and sentiment alerts via your dashboard.',
     },
+    {
+      question: 'Is the onboarding fee charged every month?',
+      answer: 'No. The onboarding fee is included only in your first monthly-plan payment. Your first payment is $347 for Starter Closer, $647 for Growth Agency, or $2,047 for Enterprise White-Label. After that, the plans renew at $197, $397, or $797 per month respectively.',
+    },
   ]
 }
 
