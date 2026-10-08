@@ -46,10 +46,9 @@ const settings = {
   },
   plan_3: {
     planName: 'Enterprise White-Label',
-    price: 797,
+    price: 997,
     onboardingFee: 1250,
     currency: '$',
-    secondaryPrice: 'or $9,999 one time',
     description: 'For large sales organizations with complex needs.',
     cta: 'Contact Sales',
     href: 'mailto:sales@closerintellect.ai',
