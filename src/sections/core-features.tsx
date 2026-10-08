@@ -19,7 +19,7 @@ const settings = {
     'Cold Universal Lead Search',
     'Lead Management',
     'Second Brain',
-    'Lead Exchange',
+    'Lead Marketplace',
   ],
 }
 
