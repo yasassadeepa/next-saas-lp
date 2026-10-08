@@ -36,7 +36,7 @@ const settings = {
     cta: 'Scale Your Agency',
     href: 'https://app.closerintellect.ai',
     features: [
-      'Unlimited Seats',
+      '15 Seats',
       'Everything in Starter Closer Package',
       'Usage Billing with minimum rates',
       'Admin Reports with AI features',
