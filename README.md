@@ -37,20 +37,23 @@ Start by cloning this repository
 ```
 
 
-Install dependecies (this project uses yarn as package manager)
+Install dependencies (this project uses pnpm 10 and Node.js 20+)
 
 ```bash
-  yarn
+  pnpm install
 ```
 
-Run on localhost (dev environement)
+Copy `.env.example` to `.env` and replace every placeholder with the server-side
+MongoDB Atlas, Resend, and onboarding values for your environment.
+
+Run on localhost (development environment)
 ```bash
-  yarn dev # http://localhost:3000
+  pnpm dev # http://localhost:3000
 ```
 
 To build the project run this command
 ```bash
-  yarn build
+  pnpm build
 ```   
 ## Authors
 

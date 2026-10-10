@@ -15,6 +15,7 @@ const settings = {
     { name: 'pricing', href: '#pricing' },
     { name: 'leadership', href: '#leadership' },
     { name: 'FAQ', href: '#faq' },
+    { name: 'Contact', href: '/#contact' },
     { name: 'Docs', href: 'https://docs.closerintellect.ai' },
   ],
   cta: {
@@ -56,7 +57,11 @@ export default function Navbar() {
       </div>
 
       {/* mobile only - burger menu icon */}
-      <motion.div
+      <motion.button
+        type="button"
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isOpen}
+        aria-controls="mobile-navigation"
         initial={{ scale: 1, y: 0 }}
         whileTap={{ scale: 0.8 }}
         transition={{ duration: 0.3 }}
@@ -65,12 +70,13 @@ export default function Navbar() {
       >
         {!isOpen && <AlignJustify size={20} />}
         {isOpen && <X size={20} />}
-      </motion.div>
+      </motion.button>
 
       {/* mobile only - menu container with AnimatePresence for exit animations */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ height: 0, opacity: 1, y: -20 }}
             animate={{ height: '100vh', opacity: 1, y: 0 }}
             exit={{ height: 0, opacity: 1, y: -20 }}
